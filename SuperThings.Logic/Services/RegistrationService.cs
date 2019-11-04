@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SuperThings.Data.Models;
 using SuperThings.Data.Repository;
+using SuperThings.Data.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;

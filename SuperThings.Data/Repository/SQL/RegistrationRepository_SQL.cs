@@ -1,28 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SuperThings.Data.Models;
+using SuperThings.Data.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SuperThings.Data.Repository
+namespace SuperThings.Data.Repository.SQL
 {
-    public interface IRegistrationRepository
+
+    public class RegistrationRepository_SQL : IRegistrationRepository
     {
-        public Task<int> CreateRegistration(Registrant entry);
-        public Task<Registrant> GetRegistrant(int id);
-        public Task<ICollection<Registrant>> GetMostRecent(int num);
+        private readonly SuperThingsSqlContext _context;
 
-        public Task<int> GetCount();
-
-        public Task<ICollection<FavoriteInteger>> GetFavoriteIntegersStats(int num);
-    }
-    public class RegistrationRepository : IRegistrationRepository
-    {
-        private readonly SuperThingsContext _context;
-
-        public RegistrationRepository(SuperThingsContext context)
+        public RegistrationRepository_SQL(SuperThingsSqlContext context)
         {
             _context = context;
         }

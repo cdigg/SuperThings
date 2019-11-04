@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperThings.Data.Repository
+namespace SuperThings.Data.Repository.SQL
 {
-    public class SuperThingsContext : DbContext
+    public class SuperThingsSqlContext : DbContext
     {
-        public SuperThingsContext(DbContextOptions<SuperThingsContext> options) : base(options)
+        public SuperThingsSqlContext(DbContextOptions<SuperThingsSqlContext> options) : base(options)
         { }
 
 
